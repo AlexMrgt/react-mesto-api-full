@@ -1,0 +1,34 @@
+.unauthorized__submit{
+
+  width: 358px;
+  height: 50px;
+}
+.unauthorized__submit{
+
+  margin-top: 100px;
+  margin-bottom: 30px;
+
+
+  outline: none;
+  background-color: white;
+
+  border:none;
+  border-radius: 5px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+
+
+  cursor: pointer;
+
+  transition: all 0.15s;
+}
+
+
+
+.unauthorized__submit:hover:enabled{
+  opacity: .85;
+
+}

@@ -1,0 +1,20 @@
+.card__title{
+  margin-left: 21px;
+
+  display: inline-block;
+
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  width: 70%;
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+
+  margin-right: 20px;
+
+}

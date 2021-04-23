@@ -1,0 +1,16 @@
+.profile__name-and-edit-button-container{
+
+  display: flex;
+  align-items: center;
+  grid-area: name-and-edit-button;
+  gap: 5px;
+}
+
+@media screen and (max-width: 898px){
+  .profile__name-and-edit-button-container{
+
+    gap: 5px;
+    margin-bottom: 14px;
+    justify-content: center;
+  }
+}

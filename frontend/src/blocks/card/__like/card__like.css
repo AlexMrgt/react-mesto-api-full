@@ -1,0 +1,27 @@
+.card__like{
+
+  border: none;
+  outline: none;
+
+  background: url("../../../images/card/like-button.svg") center no-repeat;
+
+  width: 20px;
+  height: 20px;
+
+  margin-bottom: 3px;
+
+
+
+
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.card__like:hover{
+
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+

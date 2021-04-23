@@ -37,6 +37,7 @@ const login = (req, res, next) => {
         'some-secret-key',
         { expiresIn: '7d' },
       );
+
       res.cookie('jwt', token,
         {
           maxAge: 3600000 * 24 * 7,
@@ -49,6 +50,11 @@ const login = (req, res, next) => {
       next(new AuthenticationError(err.message));
     });
 };
+
+const logOut = (req, res, next) => {
+  res.clearCookie("jwt")
+  .end();
+}
 
 const getUsers = (_, res, next) => {
   User.find({})
@@ -114,6 +120,7 @@ const editUserAvatar = (req, res, next) => {
 
 module.exports = {
   login,
+  logOut,
   getUserInfo,
   getUsers,
   getUserById,

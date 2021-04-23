@@ -1,0 +1,20 @@
+.unauthorized__field{
+
+  border: 0;
+  height: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bcbcc4;
+  background-color: transparent;
+
+  width: 358px;
+
+  padding: 10px 0 15px 3px;
+
+  color: white;
+  outline-color: royalblue;
+
+}
+
+.unauthorized__field::-webkit-input-placeholder {
+  color: #ccc;
+}

@@ -1,0 +1,9 @@
+.unauthorized__input-error{
+  color: red;
+  position: absolute;
+
+  left: 3px;
+  top: calc(100% + 10px);
+
+  opacity: 1;
+}

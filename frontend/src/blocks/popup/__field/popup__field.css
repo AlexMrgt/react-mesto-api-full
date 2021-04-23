@@ -1,0 +1,22 @@
+.popup__field{
+
+  border: 0;
+  height: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bcbcc4;
+  background-color: transparent;
+
+  width: 358px;
+
+  padding: 10px 0 10px 3px;
+
+  outline-color: royalblue;
+}
+
+@media screen and (max-width: 600px){
+  .popup__field{
+
+    width: 238px;
+  }
+}
+

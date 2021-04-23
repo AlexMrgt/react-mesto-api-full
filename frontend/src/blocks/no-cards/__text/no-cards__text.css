@@ -1,0 +1,13 @@
+.no-cards__text{
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  padding: 0;
+  margin: 0;
+
+  color: white;
+}

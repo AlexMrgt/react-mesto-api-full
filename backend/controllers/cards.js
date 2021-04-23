@@ -4,6 +4,8 @@ const Card = require('../models/card');
 
 const getCards = (_, res, next) => {
   Card.find({})
+    .populate('owner')
+    .populate('likes')
     .then((cards) => res.send(cards))
     .catch(next);
 };
@@ -46,6 +48,8 @@ const likeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Нет карточки с таким ID'))
+    .populate('owner')
+    .populate('likes')
     .then((card) => res.status(200).send(card))
     .catch(next);
 };
@@ -59,6 +63,8 @@ const dislikeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Нет карточки с таким ID'))
+    .populate('owner')
+    .populate('likes')
     .then((card) => res.status(200).send(card))
     .catch(next);
 };

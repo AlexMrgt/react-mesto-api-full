@@ -1,0 +1,30 @@
+.profile__image-and-edit-button-container {
+
+  position: relative;
+  cursor: pointer;
+  grid-area: photo;
+
+
+}
+
+@media screen and (max-width:  898px){
+  .profile__image-and-edit-button-container{
+
+    margin-bottom: 26px;
+
+    justify-self: center;
+  }
+}
+
+
+/* выглядит это не оч по БЭМ */
+
+.profile__image-and-edit-button-container:hover  .profile__photo{
+
+  opacity: 0.6;
+}
+
+.profile__image-and-edit-button-container:hover  .profile__edit-profile-image{
+
+  opacity: 1;
+}

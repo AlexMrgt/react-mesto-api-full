@@ -1,0 +1,25 @@
+.unauthorized__label{
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  margin-bottom: 65px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  width: 358px;
+
+}
+
+@media screen and (max-width: 600px){
+  .popup__form-label{
+
+    margin-bottom: 65px;
+  }
+}
+

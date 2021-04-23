@@ -1,0 +1,21 @@
+.authorize-popup{
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 3%;
+  background-color: white;
+
+  cursor: default;
+}
+
+@media screen and (max-width: 600px){
+  .popup__wrapper{
+
+     width: 282px;
+  }
+}

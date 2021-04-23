@@ -1,0 +1,25 @@
+.profile__add-card{
+  border: none;
+  outline: none;
+  background-color: black;
+
+  justify-self: end;
+  align-self: center;
+
+  grid-area: add-button;
+
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.profile__add-card:hover{
+
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 898px){
+  .profile__add-card{
+
+    justify-self: center;
+  }
+}

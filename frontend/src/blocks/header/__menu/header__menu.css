@@ -1,0 +1,18 @@
+.header__menu{
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  gap: 24px;
+  list-style: none;
+}
+
+@media screen and (max-width:900px){
+  .header__menu{
+
+    margin-right: 50px;
+    padding-bottom: 20px;
+
+  }
+}

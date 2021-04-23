@@ -1,0 +1,7 @@
+.unauthorized__submit_disabled{
+  opacity: 0.2;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: default;
+}

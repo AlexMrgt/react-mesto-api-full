@@ -1,0 +1,15 @@
+.popup__close-popup-image{
+
+  transform: rotate(-45deg);
+
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 600px){
+  .popup__close-popup-image{
+
+    width: 26px;
+    height: 26px;
+  }
+}

@@ -3,17 +3,20 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 
+const cors = require('cors');
+
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
 
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 
-const { login, createUser } = require('./controllers/users');
+const { login, createUser, logOut } = require('./controllers/users');
 
 const { registrationValidator, loginValidator } = require('./middlewares/celebrateValidation');
 const auth = require('./middlewares/auth');
 
 const NotFoundError = require('./errors/NotFoundError');
+const { compare } = require('bcrypt');
 
 const { PORT = 3000 } = process.env;
 
@@ -37,6 +40,11 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use(requestLogger);
 
+app.use(cors({
+  origin: 'http://localhost:3001',
+  credentials: true,
+}));
+
 app.post('/signup',
   registrationValidator,
   createUser);
@@ -45,9 +53,13 @@ app.post('/signin',
   loginValidator,
   login);
 
+app.delete('/logout', logOut);
+
 app.use(auth);
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
+
+
 
 app.use((req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден :['));
@@ -63,7 +75,7 @@ app.use((err, _, res, next) => {
   if (err.kind === 'ObjectId') {
     res.status(400).send({ message: 'Неверный формат данных' });
   } else {
-    res.status(statusCode).send({ message: statusCode === 500 ? 'Server ERROR' : message });
+    res.status(statusCode).send({ message: statusCode === 500 ? 'Server ERROr' : message });
   }
   next();
 });
