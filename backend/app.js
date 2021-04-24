@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const { errors } = require('celebrate');
 
-const cors = require('cors');
 
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
 
@@ -16,7 +16,6 @@ const { registrationValidator, loginValidator } = require('./middlewares/celebra
 const auth = require('./middlewares/auth');
 
 const NotFoundError = require('./errors/NotFoundError');
-const { compare } = require('bcrypt');
 
 const { PORT = 3000 } = process.env;
 
@@ -40,8 +39,14 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use(requestLogger);
 
+const whiteCors = [
+  'http://mesto.practikum.nomoredomains.club',
+  'https://apimesto.practikum.nomoredomains.club',
+  'http://localhost:3001',
+]
+
 app.use(cors({
-  origin: 'http://localhost:3001',
+  origin: whiteCors,
   credentials: true,
 }));
 
