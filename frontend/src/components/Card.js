@@ -10,15 +10,8 @@ function Card({
   const {_id: currentUserId} = useContext(CurrentUserContext);
 
   const isOwner = cardOwner._id === currentUserId;
+
   const isLiked = likes.some(user => user._id === currentUserId);
-
-  const cardDeleteButtonClassName = (
-    `card__delete-card ${isOwner ? '' : 'card__delete-card_hidden'}`
-  );
-
-  const cardLikeClassName = (
-    `card__like ${isLiked ? 'card__like_active' : ''}`
-  );
 
   function handleClick() {
 
@@ -37,11 +30,23 @@ function Card({
 
   return (
     <article  className = 'card'>
-      <button type = 'button' className = {cardDeleteButtonClassName} onClick = {handleDeleteClick}></button>
-      <img src={link} alt={`Фотография '${name}'`} className='card__picture' onClick = {handleClick} />
+      <button
+        type = 'button'
+        className = {`card__delete-card ${!isOwner && 'card__delete-card_hidden'}`}
+        onClick = {handleDeleteClick}></button>
+      <img
+        src={link}
+        alt={`Фотография '${name}'`}
+        className='card__picture'
+        onClick = {handleClick}
+      />
       <h2 className='card__title'>{name}</h2>
       <div className='card__like-container'>
-        <button type='button' className={cardLikeClassName} onClick={handleLikeClick}></button>
+        <button
+          type='button'
+          className={`card__like ${isLiked && 'card__like_active'} `}
+          onClick={handleLikeClick}>
+        </button>
         <p className='card__like-counter'>{likes.length}</p>
       </div>
     </article>

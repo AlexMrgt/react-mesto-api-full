@@ -172,12 +172,8 @@ function App() {
       .catch(err => {
         handleApiErr(err)
       })
-  }, []);
+  }, [isLoggedIn]);
 
-  useEffect(() => {
-
-
-  }, []);
 
   function handleRegistration({ password, email }) {
 
@@ -212,8 +208,11 @@ function App() {
   }
 
   function handleSignOut() {
-    logOut();
-    setLoggedInStatus(false);
+    logOut()
+      .then(() => {
+        setLoggedInStatus(false);
+      })
+    ;
   }
 
   return (

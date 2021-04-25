@@ -5,7 +5,6 @@ function Header({ email, onSignOut }) {
 
   function signOut(){
 
-    //localStorage.removeItem('jwt');
     onSignOut();
   }
 

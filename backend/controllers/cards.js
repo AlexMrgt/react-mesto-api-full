@@ -10,14 +10,33 @@ const getCards = (_, res, next) => {
     .catch(next);
 };
 
-const createCard = (req, res, next) => {
-  const owner = req.user._id;
-  const { name, link } = req.body;
+const createCard = async(req, res, next) => {
 
-  Card.create({ name, link, owner })
-    .then((card) => res.send(card))
-    .catch(next);
-};
+  try{
+    const owner = req.user._id;
+    const { name, link } = req.body;
+
+    let newCard = await Card.create({ name, link, owner })
+    populatedCard = await newCard.populate('owner').execPopulate();
+    res.send(populatedCard);
+  } catch(err) {
+    return next(err);
+  }
+}
+
+// не нашел как сделать populate в таком варианте
+
+// const createCard = (req, res, next) => {
+//   const owner = req.user._id;
+//   const { name, link } = req.body;
+
+//   Card.create({ name, link, owner })
+//     .then((newCard) => {
+//       const populatedCard = newCard.populate('owner').execPopulate();
+//       console.log(populatedCard);
+//       res.send(populatedCard)})
+//     .catch(next);
+// };
 
 const deleteCardById = (req, res, next) => {
   const { cardId } = req.params;
