@@ -12,3 +12,7 @@ node_modules
 
 # Optional REPL history
 .vscode
+
+.editorconfig
+
+.env

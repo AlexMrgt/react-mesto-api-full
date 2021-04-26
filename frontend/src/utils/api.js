@@ -117,7 +117,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.mesto.practikum.nomoredomains.club',
+  //baseUrl: 'https://api.mesto.practikum.nomoredomains.club',
+  baseUrl: 'http://localhost:3000',
 });
 
 export default api;
