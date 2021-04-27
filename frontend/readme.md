@@ -1,5 +1,5 @@
 
-# Проект "Mesto.Russia".
+# Проект "Mesto.Russia"
 
 ## Описание
 
